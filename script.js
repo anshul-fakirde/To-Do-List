@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- CONFIGURATION: Your Images Here ---
+    // CONFIGURATION: 
     const plantStages = [
         "apple-tree-growth-cycle_1.png", // 0% (Seed)
         "apple-tree-growth-cycle_2.png", // 25% (Sapling)
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "apple-tree-growth-cycle_5.png"  // 100% (Fruits)
     ];
 
-    // --- SELECT ELEMENTS ---
+    // SELECT ELEMENTS
     const input = document.getElementById('todo-input');
     const addBtn = document.getElementById('add-btn');
     const todoList = document.getElementById('todo-list');
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressFill = document.getElementById('progress-fill');
     const streakCountSpan = document.getElementById('streak-count');
 
-    // --- STARTUP ---
+    //  STARTUP
     loadTasks();
     renderCalendar();
     updateStreak();
 
-    // --- EVENTS ---
+    //  EVENTS 
     addBtn.addEventListener('click', addTask);
     input.addEventListener('keypress', (e) => { if(e.key === 'Enter') addTask() });
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
     }
 
-    // --- TASK LOGIC ---
+    //TASK LOGIC 
     function addTask() {
         const text = input.value.trim();
         if (!text) return;
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         todoList.appendChild(li);
     }
 
-    // --- PROGRESS & IMAGE LOGIC ---
+    // PROGRESS & IMAGE LOGIC
     function updateProgress() {
         const data = getData();
         const today = getTodayKey();
@@ -236,4 +236,5 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.appendChild(el);
         }
     }
+
 });
