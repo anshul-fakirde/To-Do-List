@@ -14,7 +14,7 @@ body {
     color: #444;
 }
 
-/* --- LAYOUT CONTAINER (CSS Grid) --- */
+/*  LAYOUT CONTAINER (CSS Grid) */
 .main-container {
     display: grid;
     /* Desktop: Left Column (340px) | Right Column (Flexible) */
@@ -30,7 +30,7 @@ body {
     margin: 0 auto;    /* Center the app on the screen */
 }
 
-/* --- ASSIGN CARDS TO GRID AREAS --- */
+/*  ASSIGN CARDS TO GRID AREAS */
 .plant-card { 
     grid-area: plant; 
     height: fit-content; /* Don't stretch vertically */
@@ -46,7 +46,7 @@ body {
     min-height: 500px; /* Make the list look substantial */
 }
 
-/* --- MOBILE RESPONSIVENESS (The "Reactive" Part) --- */
+/*  MOBILE RESPONSIVENESS (The "Reactive" Part) */
 @media (max-width: 860px) {
     .main-container {
         /* Switch to Single Column */
@@ -65,7 +65,7 @@ body {
     }
 }
 
-/* --- CARD STYLES --- */
+/*CARD STYLES  */
 .plant-card, .todo-card, .calendar-card {
     background: var(--card-bg);
     padding: 25px;
@@ -75,7 +75,7 @@ body {
     text-align: center;
 }
 
-/* --- PLANT IMAGE --- */
+/* PLANT IMAGE */
 .image-container {
     height: 180px; /* Fixed height prevents jumping */
     display: flex;
@@ -90,7 +90,7 @@ body {
     transition: opacity 0.3s ease; /* Smooth fade when switching images */
 }
 
-/* --- PROGRESS BAR --- */
+/* PROGRESS BAR  */
 #progress-text {
     font-weight: 700;
     margin-bottom: 10px;
@@ -113,7 +113,7 @@ body {
     border-radius: 10px;
 }
 
-/* --- STREAK BADGE --- */
+/* STREAK BADGE */
 .streak-badge {
     position: absolute;
     top: 15px;
@@ -126,7 +126,7 @@ body {
     font-weight: bold;
 }
 
-/* --- TODO LIST --- */
+/* TODO LIST  */
 h1 { font-size: 1.5em; margin-bottom: 15px; color: #2e7d32; }
 
 .input-group { display: flex; gap: 10px; margin-bottom: 20px; }
@@ -179,7 +179,7 @@ li.completed span { text-decoration: line-through; color: #888; }
     padding: 5px;
 }
 
-/* --- CALENDAR --- */
+/*  CALENDAR  */
 .calendar-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; }
 .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .day { padding: 8px; font-size: 0.9em; background: #f5f5f5; border-radius: 6px; }
@@ -189,4 +189,5 @@ li.completed span { text-decoration: line-through; color: #888; }
 
 /* Confetti */
 .confetti { position: absolute; width: 10px; height: 10px; background: red; animation: fall 4s linear infinite; }
+
 @keyframes fall { to { transform: translateY(100vh) rotate(720deg); } }
