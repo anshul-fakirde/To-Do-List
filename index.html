@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garden To-Do 🌳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <div id="confetti-container"></div>
+
     <div class="main-container">
         
-        <div class="plant-section">
-            <h2>Daily Growth</h2>
-            <div id="plant-display" class="plant-stage-1">🌱</div>
+        <div class="plant-card">
+            
+            <div class="streak-badge">
+                <i class="fas fa-fire"></i> <span id="streak-count">0</span> Day Streak
+            </div>
+
+            <div class="image-container">
+                <img id="plant-image" src="apple-tree-growth-cycle_1.png" alt="Growing Plant">
+            </div>
+
             <p id="progress-text">0% Completed</p>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
         </div>
 
-        <div class="todo-section">
+        <div class="todo-card">
             <h1>Today's Tasks</h1>
-            
             <div class="input-group">
                 <input type="text" id="todo-input" placeholder="Add a task for today...">
                 <button id="add-btn"><i class="fas fa-plus"></i></button>
             </div>
-
-            <ul id="todo-list">
-                </ul>
+            <ul id="todo-list"></ul>
         </div>
 
-        <div class="calendar-section">
-            <h2>History</h2>
+        <div class="calendar-card">
             <div class="calendar-header">
                 <button id="prev-month">&lt;</button>
                 <span id="month-year"></span>
                 <button id="next-month">&gt;</button>
             </div>
-            <div class="calendar-grid" id="calendar-grid">
-                </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
         </div>
 
     </div>
