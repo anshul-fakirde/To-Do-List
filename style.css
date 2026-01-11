@@ -1,0 +1,149 @@
+:root {
+    --primary: #4CAF50; /* Green theme */
+    --bg: #e8f5e9;
+    --card: #ffffff;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Plant Section --- */
+.plant-section {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#plant-display {
+    font-size: 80px;
+    height: 100px;
+    margin: 10px 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Different animations for stages */
+.plant-stage-1 { transform: scale(0.8); } /* Seedling */
+.plant-stage-2 { transform: scale(1.0); } /* Small Plant */
+.plant-stage-3 { transform: scale(1.1); } /* Tree */
+.plant-stage-4 { transform: scale(1.2); filter: drop-shadow(0 0 10px gold); } /* Fruit Tree */
+
+#progress-text {
+    color: #666;
+    font-weight: bold;
+}
+
+/* --- Todo Section --- */
+.todo-section {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+button#add-btn {
+    padding: 12px 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+ul { list-style: none; padding: 0; }
+
+li {
+    background: #f8f8f8;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #aaa;
+    border-left: 4px solid var(--primary);
+    background: #f1f8e9;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff5252;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* --- Calendar Section --- */
+.calendar-section {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.day {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background: #f9f9f9;
+}
+
+.day.today { border: 2px solid var(--primary); font-weight: bold; }
+.day.has-tasks { background-color: #ffe0b2; } /* Orange if incomplete */
+.day.all-done { background-color: #c8e6c9; color: #2e7d32; } /* Green if complete */
